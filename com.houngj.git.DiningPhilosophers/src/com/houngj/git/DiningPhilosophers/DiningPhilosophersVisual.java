@@ -26,8 +26,6 @@ public class DiningPhilosophersVisual {
 	public void open() {
 		Display display = Display.getDefault();
 		createContents();
-		shell.open();
-		shell.layout();
 		while (!shell.isDisposed()) {
 			if (!display.readAndDispatch()) {
 				display.sleep();
@@ -40,8 +38,6 @@ public class DiningPhilosophersVisual {
 	 */
 	protected void createContents() {
 		shell = new Shell();
-		shell.setSize(200, 200);
-		shell.setText("Dining Philosophers Application");
 
 	}
 
