@@ -1,4 +1,7 @@
 package com.houngj.git.DiningPhilosophers;
+
+import org.eclipse.swt.widgets.Text;
+
 public class DiningPhilosophers {
 	
 	private Object[] forks;
@@ -60,9 +63,9 @@ public class DiningPhilosophers {
 		}
 		
 	}
-	public static void main(String[] args){
+	public static void main(String val, Text text_box){
 		try{
-			DiningPhilosophers d = new DiningPhilosophers(5);
+			DiningPhilosophers d = new DiningPhilosophers(Integer.parseInt(val));
 			d.startEating();
 		}catch(InterruptedException e){
 		}
