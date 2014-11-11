@@ -62,13 +62,15 @@ public class DiningPhilosophersVisual {
 		
 		text_1 = new Text(shlDiningPhilosophers, SWT.BORDER);
 		text_1.setBounds(10, 32, 94, 70);
-		
+		  
 		btnRun.addListener(SWT.Selection, new Listener() {
 		      public void handleEvent(Event e) {
 		          switch (e.type) {
 		          case SWT.Selection:
 		        	  try{
-		        		  DiningPhilosophers d = new DiningPhilosophers(Integer.parseInt(text.getText()));
+		        		  text_1.setText("Hello");
+		        		  shlDiningPhilosophers.update();
+		        		  DiningPhilosophers d = new DiningPhilosophers(Integer.parseInt(text.getText()), shlDiningPhilosophers, text_1);
 		        		  d.startEating();
 		        	  }catch(InterruptedException error){
 		      		}

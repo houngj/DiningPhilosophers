@@ -1,15 +1,23 @@
 package com.houngj.git.DiningPhilosophers;
 
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 
 public class DiningPhilosophers {
 	
 	private Object[] forks;
 	private Philosopher[] philosophers;
-	public DiningPhilosophers(int num){
+	private Text text;
+	private Shell shell;
+	public DiningPhilosophers(int num, Shell shlDiningPhilosophers, Text text_1){
+		this.text = text_1;
+		this.shell = shlDiningPhilosophers;
 		forks = new Object[num];
 		philosophers = new Philosopher[num];
 		for(int i = 0; i < num; i++){
+			this.text.setText(String.valueOf(i));
+			this.shell.update();
+			
 			forks[i] = new Object();
 			int fork1 = i;
 			int fork2 = (i+1)%num;
@@ -64,10 +72,10 @@ public class DiningPhilosophers {
 		
 	}
 	public static void main(String val, Text text_box){
-		try{
+		/*try{
 			DiningPhilosophers d = new DiningPhilosophers(Integer.parseInt(val));
 			d.startEating();
 		}catch(InterruptedException e){
-		}
+		}*/
 	}
 }
